@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Entrega</title>
+</head>
+<body>
+<h1>Editar Entrega</h1>
+<form th:action="@{/entregas/{id}(id=${entrega.id})}" th:object="${entrega}" method="post">
+    <label>Remetente:</label>
+    <input type="text" th:field="*{remetente}" />
+    <label>Destinatário:</label>
+    <input type="text" th:field="*{destinatario}" />
+    <label>Status:</label>
+    <input type="text" th:field="*{status}" />
+    <button type="submit">Salvar</button>
+</form>
+<a th:href="@{/entregas}">Voltar</a>
+</body>
+</html>

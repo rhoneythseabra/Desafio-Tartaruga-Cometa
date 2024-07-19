@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalhes da Entrega</title>
+</head>
+<body>
+<h1>Detalhes da Entrega</h1>
+<p>ID: <span th:text="${entrega.id}"></span></p>
+<p>Remetente: <span th:text="${entrega.remetente}"></span></p>
+<p>Destinatário: <span th:text="${entrega.destinatario}"></span></p>
+<p>Status: <span th:text="${entrega.status}"></span></p>
+<a th:href="@{/entregas}">Voltar</a>
+</body>
+</html>

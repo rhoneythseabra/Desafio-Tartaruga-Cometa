@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Entregas</title>
+</head>
+<body>
+<h1>Lista de Entregas</h1>
+<a th:href="@{/entregas/new}">Nova Entrega</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Remetente</th>
+        <th>Destinatário</th>
+        <th>Status</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entrega : ${entregas}">
+        <td th:text="${entrega.id}">ID</td>
+        <td th:text="${entrega.remetente}">Remetente</td>
+        <td th:text="${entrega.destinatario}">Destinatário</td>
+        <td th:text="${entrega.status}">Status</td>
+        <td>
+            <a th:href="@{/entregas/{id}(id=${entrega.id})}">Ver</a>
+            <a th:href="@{/entregas/{id}/edit(id=${entrega.id})}">Editar</a>
+            <a th:href="@{/entregas/{id}/delete(id=${entrega.id})}">Deletar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
